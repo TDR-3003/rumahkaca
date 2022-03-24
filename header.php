@@ -62,10 +62,10 @@
                     <span>Informasi Tanaman</span></a>
             </li>
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+            <li class="nav-item <?php if($activePage == 'sensor'){ echo "active";} ?>">
+                <a class="nav-link" href="sensor.php">
+                    <i class="fas fa-bezier-curve"></i>
+                    <span>Sensors</span></a>
             </li>
 
             <!-- Divider -->

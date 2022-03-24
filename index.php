@@ -14,6 +14,14 @@
 $plants = ("SELECT * FROM plants");
 $sql = mysqli_query($conn,$plants);
 $sum_plants = mysqli_num_rows($sql);
+
+$result = query("SELECT AVG(value) FROM plants");
+foreach ($result as $avg) {
+}
+
+$temps = query("SELECT AVG(value) FROM sensors WHERE type = 'suhu' ");
+foreach ($temps as $temp) {
+}
 ?>
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
@@ -42,7 +50,7 @@ $sum_plants = mysqli_num_rows($sql);
                         <div class="col mr-2">
                             <div class="text-s font-weight-bold text-success text-uppercase mb-1">
                                 Kelembaban Tanah</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">50 %</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= round($avg["AVG(value)"],2); ?> %</div>
                         </div>
                         <div class="col-auto">
                             <!-- <i class="fas fa-dollar-sign fa-2x text-gray-300"></i> -->
@@ -84,7 +92,7 @@ $sum_plants = mysqli_num_rows($sql);
                         <div class="col mr-2">
                             <div class="text-s font-weight-bold text-warning text-uppercase mb-1">
                                 Suhu</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">18 &deg;C</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= round($temp["AVG(value)"],2); ?> &deg;C</div>
                         </div>
                         <div class="col-auto">
                             <!-- <i class="fas fa-comments fa-2x text-gray-300"></i> -->
