@@ -15,8 +15,24 @@ $plants = ("SELECT * FROM plants");
 $sql = mysqli_query($conn,$plants);
 $sum_plants = mysqli_num_rows($sql);
 
-$result = query("SELECT AVG(value) FROM plants");
-foreach ($result as $avg) {
+$sen_tnh = ("SELECT * FROM sensors WHERE type = 'tanah' ");
+$sen_tnhs = mysqli_query($conn,$sen_tnh);
+$sum_tnh = mysqli_num_rows($sen_tnhs);
+
+$sen_lux = ("SELECT * FROM sensors WHERE type = 'cahaya' ");
+$sen_luxs = mysqli_query($conn,$sen_lux);
+$sum_lux = mysqli_num_rows($sen_luxs);
+
+$sen_temp = ("SELECT * FROM sensors WHERE type = 'suhu' ");
+$sen_temps = mysqli_query($conn,$sen_temp);
+$sum_temp = mysqli_num_rows($sen_temps);
+
+$tnhs = query("SELECT AVG(value) FROM sensors WHERE type = 'tanah' ");
+foreach ($tnhs as $tnh) {
+}
+
+$luxs = query("SELECT AVG(value) FROM sensors WHERE type = 'tanah' ");
+foreach ($luxs as $lux) {
 }
 
 $temps = query("SELECT AVG(value) FROM sensors WHERE type = 'suhu' ");
@@ -49,8 +65,8 @@ foreach ($temps as $temp) {
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-s font-weight-bold text-success text-uppercase mb-1">
-                                Kelembaban Tanah</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= round($avg["AVG(value)"],2); ?> %</div>
+                                Lembab Tanah (<?= $sum_tnh; ?>)</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= round($tnh["AVG(value)"],2); ?> %</div>
                         </div>
                         <div class="col-auto">
                             <!-- <i class="fas fa-dollar-sign fa-2x text-gray-300"></i> -->
@@ -67,11 +83,11 @@ foreach ($temps as $temp) {
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-s font-weight-bold text-info text-uppercase mb-1">Cahaya
+                            <div class="text-s font-weight-bold text-info text-uppercase mb-1">Cahaya (<?= $sum_lux;?>)
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= round($lux["AVG(value)"],2); ?> lux</div>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +107,7 @@ foreach ($temps as $temp) {
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-s font-weight-bold text-warning text-uppercase mb-1">
-                                Suhu</div>
+                                Suhu (<?= $sum_temp;?>)</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?= round($temp["AVG(value)"],2); ?> &deg;C</div>
                         </div>
                         <div class="col-auto">

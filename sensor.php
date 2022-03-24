@@ -23,6 +23,21 @@ if(isset($_POST['addsensor'])){
         echo "ERROR, tidak berhasil". mysqli_error($conn);
     }
 }
+
+if(isset($_POST['delete'])){
+    // var_dump($_POST['id']);
+    $id = $_POST['id'];
+    $sql = "DELETE FROM sensors WHERE id = '".$id."'";
+    if(mysqli_query($conn,$sql)){
+    echo '
+        <div class="alert alert-danger" role="alert">
+            Data Sensor Telah di Hapus!
+        </div>
+    ';
+    }else{
+        echo "ERROR, tidak berhasil". mysqli_error($conn);
+    }
+}
 ?>
 
 <!-- Begin Page Content -->
@@ -60,8 +75,12 @@ if(isset($_POST['addsensor'])){
                         <td class="text-center"><?= $sensor['type']; ?></td>
                         <td class="text-center"><?= $sensor['value']; ?> %</td>
                         <td class="text-center"><?= $sensor['created_at']; ?></td>
-                        <td class="text-center"><button type="button" class="btn btn-success">Edit</button>
-                        <button type="button" class="btn btn-danger">Hapus</button></td>
+                        <td class="text-center">
+                        <form action="" method="post">
+                            <button type="button" class="btn btn-success">Edit</button>
+                            <button type="submit" class="btn btn-danger" name="delete">Delete</button>
+                            <input type="hidden" name="id" value="<?= $sensor['id'];?>">
+                        </form>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
