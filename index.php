@@ -31,7 +31,7 @@ $tnhs = query("SELECT AVG(value) FROM sensors WHERE type = 'tanah' ");
 foreach ($tnhs as $tnh) {
 }
 
-$luxs = query("SELECT AVG(value) FROM sensors WHERE type = 'tanah' ");
+$luxs = query("SELECT AVG(value) FROM sensors WHERE type = 'cahaya' ");
 foreach ($luxs as $lux) {
 }
 
