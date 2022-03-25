@@ -95,13 +95,6 @@ if(isset($_POST['addplant'])){
               <div class="col-sm-8"><input type="text" class="form-control" name="description" placeholder="Deskripsi" value=""></div>
               </div>
             </div>
-            <div class="form-group">
-              <div class="row">
-              <label class="col-sm-3 control-label text-right">Api Key <span class="text-red">*</span></label>
-              <div class="col-sm-8"><input type="text" class="form-control" name="api_key" placeholder="Api" id="api_key" value="">
-              </div>
-              </div>
-            </div>
             <div class="modal-footer">
               <button type="submit" class="btn btn-primary btn-user btn-block" name="addplant" value="add">Simpan</button>
             </div>

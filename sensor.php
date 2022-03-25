@@ -73,7 +73,7 @@ if(isset($_POST['delete'])){
                     <tr>
                         <td><?= $sensor['name']; ?></td>
                         <td class="text-center"><?= $sensor['type']; ?></td>
-                        <td class="text-center"><?= $sensor['value']; ?> %</td>
+                        <td class="text-center"><?= $sensor['value']; ?></td>
                         <td class="text-center"><?= $sensor['created_at']; ?></td>
                         <td class="text-center">
                         <form action="" method="post">
