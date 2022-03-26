@@ -10,7 +10,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="refresh" content="10;">
+    <meta http-equiv="refresh" content="20;">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -62,11 +62,19 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Informasi Tanaman</span></a>
             </li>
-            <!-- Nav Item - Charts -->
+
+            <!-- Nav Item - Sensors -->
             <li class="nav-item <?php if($activePage == 'sensor'){ echo "active";} ?>">
                 <a class="nav-link" href="sensor.php">
                     <i class="fas fa-bezier-curve"></i>
                     <span>Sensors</span></a>
+            </li>
+
+            <!-- Nav Item - Sensors -->
+            <li class="nav-item <?php if($activePage == 'kontrol'){ echo "active";} ?>">
+                <a class="nav-link" href="kontrol.php">
+                    <i class="fa-solid fa-desktop"></i>
+                    <span>Kontrol</span></a>
             </li>
 
             <!-- Divider -->
