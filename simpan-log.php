@@ -13,18 +13,19 @@ echo "<br>";
 echo $value;
 echo "<br>";
 
-$ceks = query("SELECT api_key FROM sensors WHERE api_key = '".$api_key."' ");
+$ceks = query("SELECT * FROM sensors WHERE api_key = '".$api_key."' ");
 // var_dump($ceks);
 foreach($ceks as $cek):
 if($api_key == $cek['api_key']){
     echo "ada sensor";
     echo "<br>";
-    $sql = "UPDATE sensors SET value = '$value', updated_at = '$wktu' WHERE api_key = '".$api_key."' ";
-    if(mysqli_query($conn,$sql)){
-        echo "Berhasil";
-    }else{
-        echo "gagal update";
-    }
+    echo $cek['type'];
+    // $sql = "UPDATE sensors SET value = '$value', updated_at = '$wktu' WHERE api_key = '".$api_key."' ";
+    // if(mysqli_query($conn,$sql)){
+    //     echo "Berhasil";
+    // }else{
+    //     echo "gagal update";
+    // }
 }else {
     echo "tidak ada sensor";
     echo "<br>";
