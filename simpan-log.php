@@ -8,10 +8,10 @@ $wktu = date('Y-m-d  H:i:s');
 $api_key = $_GET['api_key'];
 $value = $_GET['value'];
 
-echo $api_key;
-echo "<br>";
-echo $value;
-echo "<br>";
+// echo $api_key;
+// echo "<br>";
+// echo $value;
+// echo "<br>";
 
 $ceks = query("SELECT * FROM sensors WHERE api_key = '".$api_key."' ");
 // var_dump($ceks);
