@@ -20,7 +20,7 @@ if($api_key == $cek['api_key']){
     // echo "ada sensor";
     // echo "<br>";
     // echo $cek['type'];
-    if($cek['type'] == relay){
+    if($cek['type'] == 'relay'){
         echo $cek['value'];
     }
     // $sql = "UPDATE sensors SET value = '$value', updated_at = '$wktu' WHERE api_key = '".$api_key."' ";
