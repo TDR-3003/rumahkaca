@@ -21,7 +21,11 @@ if($api_key == $cek['api_key']){
     // echo "<br>";
     // echo $cek['type'];
     if($cek['type'] == 'relay'){
-        echo $cek['value'];
+        if($cek['value'] == 1){
+            echo "on";
+        }else{
+            echo "off";
+        }
     }
     // $sql = "UPDATE sensors SET value = '$value', updated_at = '$wktu' WHERE api_key = '".$api_key."' ";
     // if(mysqli_query($conn,$sql)){
