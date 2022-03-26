@@ -26,13 +26,14 @@ if($api_key == $cek['api_key']){
         }else{
             echo "off";
         }
+    }else{
+        $sql = "UPDATE sensors SET value = '$value', updated_at = '$wktu' WHERE api_key = '".$api_key."' ";
+        if(mysqli_query($conn,$sql)){
+            echo "Berhasil";
+        }else{
+            echo "gagal update";
+        }
     }
-    // $sql = "UPDATE sensors SET value = '$value', updated_at = '$wktu' WHERE api_key = '".$api_key."' ";
-    // if(mysqli_query($conn,$sql)){
-    //     echo "Berhasil";
-    // }else{
-    //     echo "gagal update";
-    // }
 }else {
     echo "tidak ada sensor";
     echo "<br>";
