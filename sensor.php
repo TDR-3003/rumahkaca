@@ -7,7 +7,11 @@ if(isset($_POST['addsensor'])){
    $name = $_POST['name'];
    $type = $_POST['type'];
    $api_key = $_POST['api_key'];
+   if($type == 'relay'){
+     $value = 1;
+   }else{
    $value = 20;
+   }
    $wktu = date('Y-m-d  H:i:s');
 
     //query
