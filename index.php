@@ -168,10 +168,10 @@ foreach ($hums as $hum) {
     <!-- Content Kontrol --> 
     <div class="row">
 
-        <div class="col-lg-6 mb-4">
+        <div class="col-lg-8 mb-4">
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
+                    <div class="row align-items-center">
                     <?php
                     $relays = query("SELECT * FROM sensors WHERE type = 'relay' ");
                     foreach($relays as $relay):
@@ -179,12 +179,12 @@ foreach ($hums as $hum) {
                         if($relay['value'] == 0) {$status_lampu = "OFF";}
                     ?>
                     <!-- Earnings (Monthly) Card Example -->
-                    <div class="col-xl-4 col-md-8">
+                    <div class="col-xl-3 col-md-6 mb-2">
                         <div id="card" class="card card-info m-0 border-primary" style="border: 1px solid;border-radius: 3px;">
                             <div class="card-header" style="background-color:#d9edf7;#bce8f1;color:#31708f; border:-1px!important; ">
                                 <div class="row">
                                     <div class="col-12 text-right">
-                                            <span style="font-size:15px;font-weight:400">Lamp Status (<?= $status_lampu; ?>)</span>
+                                            <span style="font-size:14px;font-weight:400">Lamp Status (<?= $status_lampu; ?>)</span>
                                     </div>
                                 </div>
                             </div>
@@ -200,43 +200,27 @@ foreach ($hums as $hum) {
             </div>
         </div>
 
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
+        <!-- Informasi Status Pintu -->
+        <div class="col-xl-4 col-md-8">
+            <div class="card">
                 <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-s font-weight-bold text-info text-uppercase mb-1">Cahaya (<?= $sum_lux;?>)
-                            </div>
-                            <div class="row no-gutters align-items-center">
-                                <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= round($lux["AVG(value)"],2); ?> lux</div>
+                    <div class="row align-items-center">
+                        <!-- Informasi Status Pintu -->
+                        <div class="col-xl-12 col-md-8">
+                            <div id="card" class="card card-info m-0 border-primary" style="border: 1px solid;border-radius: 3px;">
+                                <div class="card-header" style="background-color:#d9edf7;#bce8f1;color:#31708f; border:-1px!important; ">
+                                    <div class="row">
+                                        <div class="col-12 text-right">
+                                                <span style="font-size:15px;font-weight:400">Status Pintu (Terbuka)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/bdoor_open.gif" alt="center" alt="" width="80" height="125"> 
+                                    <div class="clearfix"></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-auto">
-                            <!-- <i class="fas fa-clipboard-list fa-2x text-gray-300"></i> -->
-                            <i class="far fa-sun fa-3x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pending Requests Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-s font-weight-bold text-warning text-uppercase mb-1">
-                                Suhu (<?= $sum_temp;?>)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= round($temp["AVG(value)"],2); ?> &deg;C</div>
-                        </div>
-                        <div class="col-auto">
-                            <!-- <i class="fas fa-comments fa-2x text-gray-300"></i> -->
-                            <i class="fas fa-temperature-high fa-3x text-gray-300"></i>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>
