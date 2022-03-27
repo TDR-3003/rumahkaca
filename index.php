@@ -27,6 +27,10 @@ $sen_temp = ("SELECT * FROM sensors WHERE type = 'suhu' ");
 $sen_temps = mysqli_query($conn,$sen_temp);
 $sum_temp = mysqli_num_rows($sen_temps);
 
+$sen_hum = ("SELECT * FROM sensors WHERE type = 'lembab' ");
+$sen_hums = mysqli_query($conn,$sen_hum);
+$sum_hum = mysqli_num_rows($sen_hums);
+
 $tnhs = query("SELECT AVG(value) FROM sensors WHERE type = 'tanah' ");
 foreach ($tnhs as $tnh) {
 }
@@ -37,6 +41,10 @@ foreach ($luxs as $lux) {
 
 $temps = query("SELECT AVG(value) FROM sensors WHERE type = 'suhu' ");
 foreach ($temps as $temp) {
+}
+
+$hums = query("SELECT AVG(value) FROM sensors WHERE type = 'lembab' ");
+foreach ($hums as $hum) {
 }
 ?>
         <!-- Earnings (Monthly) Card Example -->
@@ -107,8 +115,8 @@ foreach ($temps as $temp) {
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-s font-weight-bold text-warning text-uppercase mb-1">
-                                Suhu (<?= $sum_temp;?>)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= round($temp["AVG(value)"],2); ?> &deg;C</div>
+                                Suhu (<?= $sum_temp;?>) &nbsp;Lembab (<?= $sum_temp;?>)</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= round($temp["AVG(value)"],2); ?> &deg;C &nbsp; <?= round($hum["AVG(value)"],2); ?> %</div>
                         </div>
                         <div class="col-auto">
                             <!-- <i class="fas fa-comments fa-2x text-gray-300"></i> -->

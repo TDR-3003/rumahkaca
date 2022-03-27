@@ -45,24 +45,13 @@ if(isset($_POST['addplant'])){
                 <thead>
                     <tr>
                         <th width="200px">Nama</th>
-                        <th>Deskripsi</th>
-                        <th width="120px">Tanggal Masuk</th>
+                        <th>Waktu 1</th>
+                        <th>Waktu 2</th>
                         <th class="text-center"><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#tambahuser"><i class="fas fa-laptop-code"></i> Tambah</a></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                        $plants = query("SELECT * FROM plants order by 'id' asc ");
-                        foreach ($plants as $plant) :
-                    ?>
-                    <tr>
-                        <td><?= $plant['name']; ?></td>
-                        <td><?= $plant['description']; ?></td>
-                        <td class="text-center"><?= $plant['created_at']; ?></td>
-                        <td class="text-center"><button type="button" class="btn btn-success">Edit</button>
-                        <button type="button" class="btn btn-danger">Hapus</button></td>
-                    </tr>
-                    <?php endforeach; ?>
+                    
                 </tbody>
             </table>
         </div>
