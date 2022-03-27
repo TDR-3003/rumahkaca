@@ -11,6 +11,30 @@
     <!-- Content Row -->
     <div class="row">
 <?php 
+date_default_timezone_set('Asia/Jakarta');
+$wktu = date('Y-m-d  H:i:s');
+
+if(isset($_GET['id_lampu'])){
+    $id = $_GET['id_lampu'];
+    $value_lampu = $_GET['value'];
+
+    if($value_lampu == 1){ $value = 0;}
+    if($value_lampu == 0){ $value = 1;}
+
+    // echo $id;
+    // echo "<br>";
+    // echo $value_lampu;
+    // echo "<br>";
+    // echo $value;
+
+    $sql = " UPDATE sensors SET value = '$value' , updated_at = '$wktu' WHERE id = '".$id."' ";
+   if(mysqli_query($conn,$sql)){
+    //   echo "Berhasil";
+   }else{
+    //   echo "gagal";
+   }
+}
+
 $plants = ("SELECT * FROM plants");
 $sql = mysqli_query($conn,$plants);
 $sum_plants = mysqli_num_rows($sql);
@@ -189,7 +213,7 @@ foreach ($hums as $hum) {
                                 </div>
                             </div>
                             <div class="card-body text-center">
-                                <img src="img/<?= $status_lampu; ?>.png" alt="center" alt="" width="80" height="120"> 
+                                <a href="?id_lampu=<?= $relay['id']; ?>&value=<?= $relay['value']; ?>"><img src="img/<?= $status_lampu; ?>.png" alt="center" alt="" width="80" height="120"></a>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
