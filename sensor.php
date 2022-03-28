@@ -5,14 +5,18 @@ date_default_timezone_set('Asia/Jakarta');
 $wktu = date('Y-m-d  H:i:s');
 
 if(isset($_POST['updatesensor'])){
- var_dump($_POST);
-  $id = $_POST['id'];
+//  var_dump($_POST);
+  $id = $_POST['id_sensor'];
   $name = $_POST['name'];
   $type = $_POST['type'];
   $api_key = $_POST['api_key'];
+  $wktu = date('Y-m-d  H:i:s');
 
-  $sql = " UPDATE sensors SET name = '$name' ,api_key = '$api_key' ,type = '$type'  ,updated_at = '$wktu'  WHERE id = '".$id."' ";
-  
+  $sql = " UPDATE sensors SET name = '".$name."',
+                  api_key = '".$api_key."',
+                  type = '".$type."',
+                  updated_at = '".$wktu."'  WHERE id = '".$id."' ";
+                  
   
   if(mysqli_query($conn,$sql)){
       echo '
@@ -124,7 +128,7 @@ if(isset($_POST['delete'])){
                                   $sqls = query("SELECT * FROM sensors WHERE id = '".$id."' ");
                                   foreach($sqls as $sql):
                                   ?>
-                                  <input type="hidden" name="id_user" value="<?php echo $sql['id']; ?>">
+                                  <input type="hidden" name="id_sensor" value="<?php echo $sql['id']; ?>">
                                   <div class="form-group">
                                     <div class="row">
                                     <label class="col-sm-3 control-label text-right">Name <span class="text-red">*</span></label>         
