@@ -266,8 +266,8 @@ foreach ($hums as $hum) {
                     <?php
                     $doors = query("SELECT * FROM sensors WHERE type = 'pintu' ");
                     foreach($doors as $door):
-                        if($door['value'] == 1) {$pintu = "open.gif";$status="Terbuka";}
-                        if($door['value'] == 0) {$pintu = "close.png";$status="Tutup";}
+                        if($door['value'] == 0) {$pintu = "open.gif";$status="Terbuka";}
+                        if($door['value'] == 1) {$pintu = "close.png";$status="Tutup";}
                     ?>
                         <!-- Informasi Status Pintu -->
                         <div class="col-xl-12 col-md-8">
