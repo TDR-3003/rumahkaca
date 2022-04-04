@@ -229,22 +229,29 @@ foreach ($hums as $hum) {
             <div class="card">
                 <div class="card-body">
                     <div class="row align-items-center">
+                    <?php
+                    $pumps = query("SELECT * FROM sensors WHERE type = 'pompa' ");
+                    foreach($pumps as $pump):
+                        if($pump['value'] == 1) {$pompa = "on";$status="Aktif";}
+                        if($pump['value'] == 0) {$pompa = "off";$status="StandBy";}
+                    ?>
                         <!-- Informasi Pompa Air -->
                         <div class="col-xl-12 col-md-8">
                             <div id="card" class="card card-info m-0 border-primary" style="border: 1px solid;border-radius: 3px;">
                                 <div class="card-header" style="background-color:#d9edf7;#bce8f1;color:#31708f; border:-1px!important; ">
                                     <div class="row">
                                         <div class="col-12 text-right">
-                                                <span style="font-size:15px;font-weight:400">Pompa Air (Terbuka)</span>
+                                                <span style="font-size:15px;font-weight:400">Pompa Air (<?= $status;?>)</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-body text-center">
-                                    <img src="img/pump_on.png" alt="center" alt="" width="80" height="125"> 
+                                    <img src="img/pump_<?= $pompa;?>.png" alt="center" alt="" width="80" height="125"> 
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
                         </div> 
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
@@ -256,6 +263,12 @@ foreach ($hums as $hum) {
             <div class="card">
                 <div class="card-body">
                     <div class="row align-items-center">
+                    <?php
+                    $pumps = query("SELECT * FROM sensors WHERE type = 'pompa' ");
+                    foreach($pumps as $pump):
+                        if($pump['value'] == 1) {$pompa = "on";$status="Aktif";}
+                        if($pump['value'] == 0) {$pompa = "off";$status="StandBy";}
+                    ?>
                         <!-- Informasi Status Pintu -->
                         <div class="col-xl-12 col-md-8">
                             <div id="card" class="card card-info m-0 border-primary" style="border: 1px solid;border-radius: 3px;">
@@ -272,6 +285,7 @@ foreach ($hums as $hum) {
                                 </div>
                             </div>
                         </div> 
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
