@@ -197,7 +197,7 @@ foreach ($hums as $hum) {
                 <div class="card-body">
                     <div class="row align-items-center">
                     <?php
-                    $relays = query("SELECT * FROM sensors WHERE type = 'relay' ");
+                    $relays = query("SELECT * FROM sensors WHERE type = 'lampu' ");
                     foreach($relays as $relay):
                         if($relay['value'] == 1) {$status_lampu = "ON";}
                         if($relay['value'] == 0) {$status_lampu = "OFF";}
