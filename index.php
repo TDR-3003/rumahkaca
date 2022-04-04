@@ -192,7 +192,7 @@ foreach ($hums as $hum) {
     <!-- Content Kontrol --> 
     <div class="row">
 
-        <div class="col-lg-8 mb-4">
+        <div class="col-lg-6 mb-4">
             <div class="card">
                 <div class="card-body">
                     <div class="row align-items-center">
@@ -203,7 +203,7 @@ foreach ($hums as $hum) {
                         if($relay['value'] == 0) {$status_lampu = "OFF";}
                     ?>
                     <!-- Earnings (Monthly) Card Example -->
-                    <div class="col-xl-3 col-md-6 mb-2">
+                    <div class="col-xl-4 col-md-8 mb-2">
                         <div id="card" class="card card-info m-0 border-primary" style="border: 1px solid;border-radius: 3px;">
                             <div class="card-header" style="background-color:#d9edf7;#bce8f1;color:#31708f; border:-1px!important; ">
                                 <div class="row">
@@ -224,8 +224,35 @@ foreach ($hums as $hum) {
             </div>
         </div>
 
+        <!-- Informasi Pompa Air -->
+        <div class="col-xl-3 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <!-- Informasi Pompa Air -->
+                        <div class="col-xl-12 col-md-8">
+                            <div id="card" class="card card-info m-0 border-primary" style="border: 1px solid;border-radius: 3px;">
+                                <div class="card-header" style="background-color:#d9edf7;#bce8f1;color:#31708f; border:-1px!important; ">
+                                    <div class="row">
+                                        <div class="col-12 text-right">
+                                                <span style="font-size:15px;font-weight:400">Pompa Air (Terbuka)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="img/pump_on.png" alt="center" alt="" width="80" height="125"> 
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end Informasi -->
+
         <!-- Informasi Status Pintu -->
-        <div class="col-xl-4 col-md-8">
+        <div class="col-xl-3 col-md-6">
             <div class="card">
                 <div class="card-body">
                     <div class="row align-items-center">
@@ -249,6 +276,8 @@ foreach ($hums as $hum) {
                 </div>
             </div>
         </div>
+        <!-- end Informasi -->
+
     </div>
     <!-- End Content -->
 
