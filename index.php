@@ -264,10 +264,10 @@ foreach ($hums as $hum) {
                 <div class="card-body">
                     <div class="row align-items-center">
                     <?php
-                    $pumps = query("SELECT * FROM sensors WHERE type = 'pompa' ");
-                    foreach($pumps as $pump):
-                        if($pump['value'] == 1) {$pompa = "on";$status="Aktif";}
-                        if($pump['value'] == 0) {$pompa = "off";$status="StandBy";}
+                    $doors = query("SELECT * FROM sensors WHERE type = 'pintu' ");
+                    foreach($doors as $door):
+                        if($door['value'] == 1) {$pintu = "open.gif";$status="Terbuka";}
+                        if($door['value'] == 0) {$pintu = "close.png";$status="Tutup";}
                     ?>
                         <!-- Informasi Status Pintu -->
                         <div class="col-xl-12 col-md-8">
@@ -280,7 +280,7 @@ foreach ($hums as $hum) {
                                     </div>
                                 </div>
                                 <div class="card-body text-center">
-                                    <img src="img/bdoor_open.gif" alt="center" alt="" width="80" height="125"> 
+                                    <img src="img/bdoor_<?= $pintu; ?>" alt="center" alt="" width="80" height="125"> 
                                     <div class="clearfix"></div>
                                 </div>
                             </div>

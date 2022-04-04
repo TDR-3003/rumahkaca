@@ -34,7 +34,7 @@ if(isset($_POST['addsensor'])){
    $name = $_POST['name'];
    $type = $_POST['type'];
    $api_key = $_POST['api_key'];
-   if($type == 'lampu' || $type == 'kipas' || $type == 'pompa'){
+   if($type == 'lampu' || $type == 'kipas' || $type == 'pompa' || $type == 'pintu'){
      $value = 1;
    }else{
    $value = 20;
