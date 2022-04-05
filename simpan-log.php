@@ -20,7 +20,7 @@ if($api_key == $cek['api_key']){
     // echo "ada sensor";
     // echo "<br>";
     // echo $cek['type'];
-    if($cek['type'] == 'relay'){
+    if($cek['type'] == 'relay' || $cek['type'] == 'lampu' || $cek['type'] == 'pompa' || $cek['type'] == 'kipas'){
         if($cek['value'] == 1){
             echo "on";
         }else{
